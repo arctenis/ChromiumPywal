@@ -8,6 +8,10 @@ THEME_NAME="Pywal"
 DIR=$(dirname "${BASH_SOURCE[0]}")
 THEME_DIR="$DIR/$THEME_NAME"
 
+nitrogen_config_file="$HOME/.config/nitrogen/bg-saved.cfg"
+nitrogen_file_line="$(grep "file=" "$nitrogen_config_file")"
+wallpaper="${nitrogen_file_line#*=}"
+
 # Converts hex colors into rgb joined with comma
 # #fff -> 255, 255, 255
 hexToRgb() {
